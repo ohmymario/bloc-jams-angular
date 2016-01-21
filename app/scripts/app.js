@@ -3,26 +3,27 @@
         $locationProvider
             .html5Mode({
                 enabled: true,
-                requiredBase: false
-        });
-        
+                requireBase: false
+            });
+
         $stateProvider
-            .state('landing',{
+            .state('landing', {
                 url: '/',
                 controller: 'LandingCtrl as landing',
-                templateUrl:'/templates/landing.html'
-        })
-        .state('album',{
+                templateUrl: '/templates/landing.html'
+            })
+            .state('album', {
                 url: '/album',
-                templateUrl:'/templates/album.html'
-        })
-        .state('collection',{
+                controller: 'AlbumCtrl as album',
+                templateUrl: '/templates/album.html'
+            })
+            .state('collection', {
                 url: '/collection',
                 controller: 'CollectionCtrl as collection',
-                templateUrl:'/templates/collection.html'
-        });
-    }
-    
+                templateUrl: '/templates/collection.html'
+            });
+    };
+
     angular
         .module('blocJams', ['ui.router'])
         .config(config);

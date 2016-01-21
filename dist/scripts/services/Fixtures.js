@@ -1,7 +1,8 @@
 (function() {
     function Fixtures() {
+
         var Fixtures = {};
-        
+
         var albumPicasso = {
             name: 'The Colors',
             artist: 'Pablo Picasso',
@@ -16,7 +17,7 @@
                 { name: 'Magenta', length: '374.22', audioUrl: '/assets/music/magenta' }
             ]
         };
-        
+
         var albumMarconi = {
             name: 'The Telephone',
             artist: 'Guglielmo Marconi',
@@ -31,23 +32,26 @@
                 { name: 'Wrong phone number', length: '2:15' }
             ]
         };
-        
+
         Fixtures.getAlbum = function() {
             return albumPicasso;
         };
-        
-        Fixtures.getCollection = function() {
-            
+
+        Fixtures.getCollection = function (numberOfAlbums) {
+            var albums = [];
+            for (var i = 0; i < numberOfAlbums; i++) {
+                albums.push(albumPicasso);
+            }
+            return albums;
         };
-            
+
         return Fixtures;
-    }
-    
+    };
+
     angular
         .module('blocJams')
         .factory('Fixtures', Fixtures);
 })();
-        
                 
             
             
