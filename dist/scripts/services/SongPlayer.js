@@ -1,5 +1,5 @@
 (function() {
-    function SongPlayer() {
+    function SongPlayer(Fixtures) {
         var SongPlayer = {};
         
         /**
@@ -52,7 +52,7 @@
         * @desc play the current buzz object and set song.playing to TRUE
         */
         var playSong = function(song) {
-            currentBuzzObject.play():
+            currentBuzzObject.play();
             song.playing = true;
         };
         
@@ -141,5 +141,5 @@
     
     angular
         .module('blocJams')
-        .factory('SongPlayer', SongPlayer);
+        .factory('SongPlayer', ['Fixtures', SongPlayer]);
 })();

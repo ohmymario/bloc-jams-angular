@@ -46,7 +46,7 @@
         };
 
         return Fixtures;
-    };
+    }
 
     angular
         .module('blocJams')
